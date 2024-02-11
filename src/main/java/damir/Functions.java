@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Functions {
-    private final Scanner scanner = new Scanner(System.in);
-    private final EntityManagerFactory factory = Persistence.createEntityManagerFactory("main");
-    private final EntityManager manager = factory.createEntityManager();
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final EntityManagerFactory factory = Persistence.createEntityManagerFactory("main");
+    private static final EntityManager manager = factory.createEntityManager();
 
-    public boolean createCategory(){
+    public static boolean createCategory(){
         boolean status = false;
         String categoryName = "";
 
@@ -61,7 +61,7 @@ public class Functions {
         return true;
     }
 
-    public boolean createProduct(){
+    public static boolean createProduct(){
         boolean isCategoryValidStatus = false;
 
         System.out.println("-- Все категории для выбора: --");
@@ -134,7 +134,7 @@ public class Functions {
         return true;
     }
 
-    public boolean deleteProduct(){
+    public static boolean deleteProduct(){
         System.out.print("Введите ID товара для удаления: ");
         Long productId = Long.valueOf(scanner.nextLine());
 
@@ -159,7 +159,7 @@ public class Functions {
         return true;
     }
 
-    public int fillProperties(){
+    public static int fillProperties(){
         System.out.print("Введите ID категории: ");
         Long categoryId = Long.valueOf(scanner.nextLine());
 
@@ -193,7 +193,7 @@ public class Functions {
         return counter;
     }
 
-    public boolean increasePrice(int percent){
+    public static boolean increasePrice(int percent){
         System.out.println("Список всех категорий: ");
         TypedQuery<Category> categoryTypedQuery = manager.createQuery("select c from Category c", Category.class);
         List<Category> categories = categoryTypedQuery.getResultList();
@@ -226,7 +226,7 @@ public class Functions {
         return true;
     }
 
-    public boolean updateProduct(){
+    public static boolean updateProduct(){
         System.out.print("Введите ID товара для обновления информации: ");
         Long productId = Long.valueOf(scanner.nextLine());
 
