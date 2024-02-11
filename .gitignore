@@ -11,3 +11,11 @@ target/
 *.iws
 *.iml
 *.ipr
+
+src/main/java/damir/CreateCategoryMain.java
+src/main/java/damir/CreateProductMain.java
+src/main/java/damir/DeleteProductMain.java
+src/main/java/damir/FillPropValues.java
+src/main/java/damir/JpaLessonMain.java
+src/main/java/damir/PriceIncrease.java
+src/main/java/damir/UpdateProductMain.java
